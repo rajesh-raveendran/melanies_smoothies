@@ -43,4 +43,5 @@ if ingredients_list: # list will be displayed only if selected
         st.success('Your Smoothie is ordered,'+name_on_order+'!', icon=":material/check:")
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
 #st.text(smoothiefroot_response)
-st.text(smoothiefroot_response.json())
+#st.text(smoothiefroot_response.json())
+st.dataframe = (st.text(smoothiefroot_response.json(),use_container_width = true)
