@@ -1,5 +1,6 @@
 # Import python packages
 import streamlit as st
+import requests
 #from snowflake.snowpark.context import get_active_session
 
 # Write directly to the app
@@ -40,12 +41,5 @@ if ingredients_list: # list will be displayed only if selected
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered,'+name_on_order+'!', icon=":material/check:")
-
-#topping = st.radio(
-#    "Pick your topping",
-#    ["Banana Slice :banana:", "Strawberry :strawberry:", "Whipped Cream :ice_cream:", "No Topping"],
-#    horizontal=True, index=None)
-#if topping == None:
-#    st.write("You selected:", "Nothing")
-#else:
-#    st.write("You selected:", topping)
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
