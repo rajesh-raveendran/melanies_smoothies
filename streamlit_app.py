@@ -42,4 +42,5 @@ if ingredients_list: # list will be displayed only if selected
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered,'+name_on_order+'!', icon=":material/check:")
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
+#st.text(smoothiefroot_response)
+st.text(smoothiefroot_response.json())
